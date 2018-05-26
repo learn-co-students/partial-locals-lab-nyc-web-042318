@@ -1,0 +1,7 @@
+<% if @students.blank? %>
+  <p>There are no students containing the term <%= params[:search] %>. </p>
+<% else %>
+  <% @students.each do |student| %>
+    <%= render partial: 'student', locals: {student: student} %>
+  <% end %>
+<% end %>
